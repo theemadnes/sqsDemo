@@ -15,4 +15,4 @@ def string_generator(size=6, chars=string.ascii_uppercase + string.digits):
 m = Message()
 m.set_body(string_generator())
 my_queue.write(m)
-print "Added the following string to the queue: " + m
+print "Added the following string to the queue: " + m.get_body()
