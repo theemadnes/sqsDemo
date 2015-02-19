@@ -12,7 +12,7 @@ my_queue = conn_sqs.get_queue('demoQueue1')
 def string_generator(size=6, chars=string.ascii_uppercase + string.digits):
 	return ''.join(random.choice(chars) for _ in range(size))
 
-
 m = Message()
 m.set_body(string_generator())
 my_queue.write(m)
+print "Added the following string to the queue: " + m
